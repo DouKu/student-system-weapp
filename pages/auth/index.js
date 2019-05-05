@@ -66,7 +66,9 @@ Page({
   },
 
   onLogin: function () {
-    console.log('login')
+    wx.navigateTo({
+      url: '/pages/message/index'
+    })
   },
 
   onAccountChange: function (e) {

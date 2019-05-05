@@ -1,0 +1,25 @@
+<!--pages/message/index.wxml-->
+<view>
+  <i-steps current="{{step}}">
+    <i-step>
+      <view slot="title">
+        个人信息
+      </view>
+    </i-step>
+    <i-step>
+      <view slot="title">
+        家长信息
+      </view>
+    </i-step>
+    <i-step>
+      <view slot="title">
+        科目选择
+      </view>
+    </i-step>
+  </i-steps>
+  <i-panel>
+    <i-input value="{{ value1 }}" title="收货人" autofocus placeholder="名字" />
+    <i-input value="{{ value2 }}" type="number" title="联系电话" placeholder="请输入手机号" />
+    <i-input value="{{ value3 }}" type="textarea" title="详细地址" placeholder="请输入详细地址(最多50字)" maxlength="50" />
+  </i-panel>
+</view>
