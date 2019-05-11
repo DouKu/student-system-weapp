@@ -4,6 +4,8 @@
     "i-step": "../../components/step/index",
     "i-button": "../../components/button/index",
     "i-input": "../../components/input/index",
-    "i-panel": "../../components/panel/index"
+    "i-panel": "../../components/panel/index",
+    "i-radio-group": "../../components/radio-group/index",
+    "i-radio": "../../components/radio/index"
   }
 }

@@ -5,7 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    step: 0
+    step: 0,
+    sexEnmus: [{
+      id: 1,
+      name: '男'
+    }, {
+      id: 2,
+      name: '女'
+    }],
+    sex: '',
+    isDorm: '否',
+    message: {
+      sex: 0,
+      is_dorm: 0
+    }
   },
 
   /**
@@ -62,5 +75,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  handleSexChange: function (e) {
+    this.setData({
+      sex: e.detail.value
+    })
+  },
+  handleIsDormChange: function (e) {
+    this.setData({
+      isDorm: e.detail.value
+    })
   }
 })
