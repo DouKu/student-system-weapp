@@ -76,14 +76,24 @@ Page({
   onShareAppMessage: function () {
 
   },
+  toFirst: function () {
+    this.setData({
+      step: 0
+    });
+  },
+  toSecond: function () {
+    this.setData({
+      step: 1
+    });
+  },
   handleSexChange: function (e) {
     this.setData({
       sex: e.detail.value
-    })
+    });
   },
   handleIsDormChange: function (e) {
     this.setData({
       isDorm: e.detail.value
-    })
+    });
   }
 })

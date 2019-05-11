@@ -1,1 +1,5 @@
 /* pages/message/index.wxss */
+.step-button {
+  display: flex;
+  justify-content: flex-end;
+}
