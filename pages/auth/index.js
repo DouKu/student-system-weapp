@@ -1,19 +1,25 @@
 // pages/auth/index.js
+const { $Message } = require('../../components/base/index');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    account: '',
-    password: ''
+    account: '20142100236',
+    password: '1234567'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const token = wx.getStorageSync('token');
+    if (token) {
+      wx.redirectTo({
+        url: '/pages/message/index'
+      });
+    }
   },
 
   /**
@@ -66,9 +72,45 @@ Page({
   },
 
   onLogin: function () {
-    wx.navigateTo({
-      url: '/pages/message/index'
+    wx.request({
+      url: 'http://127.0.0.1:7001/api/user/signin',
+      method: 'POST',
+      data: this.data,
+      success: (res) => {
+        const { statusCode, data } = res;
+        if (statusCode === 200) {
+          this.authSuccess(data);
+        } else {
+          this.authFail();
+        }
+      },
+      fail: () => {
+        this.authFail();
+      }
     })
+  },
+
+  authSuccess: function (data) {
+    $Message({
+      content: '登录成功',
+      type: 'success'
+    });
+    wx.setStorage({
+      key: 'token',
+      data: data.token
+    });
+    setTimeout(() => {
+      wx.navigateTo({
+        url: '/pages/message/index'
+      })
+    }, 1000);
+  },
+
+  authFail: function () {
+    $Message({
+      content: '登录失败',
+      type: 'error'
+    });
   },
 
   onAccountChange: function (e) {

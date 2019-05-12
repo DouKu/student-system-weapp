@@ -2,6 +2,7 @@
   "usingComponents": {
     "i-button": "../../components/button/index",
     "i-input": "../../components/input/index",
-    "i-panel": "../../components/panel/index"
+    "i-panel": "../../components/panel/index",
+    "i-message": "../../components/message/index"
   }
 }

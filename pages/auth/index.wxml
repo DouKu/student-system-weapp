@@ -15,4 +15,5 @@
       bind:change="onPasswordChange" />
     <i-button type="primary" bind:click="onLogin" size="small">登录</i-button>
   </i-panel>
+  <i-message id="message" />
 </view>
