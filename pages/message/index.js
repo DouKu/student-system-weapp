@@ -15,9 +15,20 @@ Page({
     }],
     sex: '',
     isDorm: '否',
+    first_subject: '',
+    second_subject: [],
     message: {
+      name: '',
       sex: 0,
-      is_dorm: 0
+      tel_num: '',
+      address: '',
+      account_location: '',
+      is_dorm: 0,
+      guardian_name: '',
+      guardian_tel_num: '',
+      guardian_id_card: '',
+      first_subject: 0,
+      second_subject: []
     }
   },
 
@@ -86,6 +97,11 @@ Page({
       step: 1
     });
   },
+  toThird: function () {
+    this.setData({
+      step: 2
+    });
+  },
   handleSexChange: function (e) {
     this.setData({
       sex: e.detail.value
@@ -95,5 +111,12 @@ Page({
     this.setData({
       isDorm: e.detail.value
     });
-  }
-})
+  },
+  handleFirstSubjectChange: function (e) {
+    this.setData({
+      first_subject: e.detail.value
+    });
+  },
+  handleSecondSubjectChange: function (e) {
+  },
+});

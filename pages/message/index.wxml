@@ -34,16 +34,43 @@
         <i-radio value="是"></i-radio>
       </i-radio-group>
     </i-panel>
-    <view class="step-button">
-      <i-button inline type="primary" bind:click="toSecond" size="small">下一步</i-button>
-    </view>
+    <i-button type="primary" bind:click="toSecond" size="small">下一步</i-button>
   </view>
   <view wx:elif="{{step === 1}}">
+    <i-input title="监护人姓名:" value="{{ value1 }}" autofocus placeholder="必填" />
+    <i-input title="监护人电话号码:" value="{{ value1 }}" autofocus placeholder="必填" />
+    <i-input title="监护人身份证号:" value="{{ value1 }}" autofocus placeholder="必填" />
     <view class="step-button">
-      <i-button inline type="default" bind:click="toFirst" size="small">上一步</i-button>
-      <i-button inline type="primary" bind:click="toThird" size="small">下一步</i-button>
+      <view class="button-wrap">
+        <i-button type="default" bind:click="toFirst" size="small">上一步</i-button>
+      </view>
+      <view class="button-wrap">
+        <i-button type="primary" bind:click="toThird" size="small">下一步</i-button>
+      </view>
     </view>
   </view>
   <view wx:else>
+    <i-panel title="科目二选一:">
+      <i-radio-group bindchange="handleFirstSubjectChange" current="{{first_subject}}">
+        <i-radio value="物理"></i-radio>
+        <i-radio value="历史"></i-radio>
+      </i-radio-group>
+    </i-panel>
+    <i-panel title="科目四选二:">
+      <i-checkbox-group bindchange="handleSecondSubjectChange" current="{{second_subject}}">
+        <i-checkbox value="化学"></i-checkbox>
+        <i-checkbox value="生物"></i-checkbox>
+        <i-checkbox value="地理"></i-checkbox>
+        <i-checkbox value="政治"></i-checkbox>
+      </i-checkbox-group>
+    </i-panel>
+    <view class="step-button">
+      <view class="button-wrap">
+        <i-button type="default" bind:click="toSecond" size="small">上一步</i-button>
+      </view>
+      <view class="button-wrap">
+        <i-button type="primary" size="small">提交</i-button>
+      </view>
+    </view>
   </view>
 </view>

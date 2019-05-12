@@ -3,3 +3,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.step-button .button-wrap {
+  width: 50%;
+}
