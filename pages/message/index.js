@@ -33,7 +33,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const token = wx.getStorageSync('token');
+    if (!token) {
+      wx.redirectTo({
+        url: '/pages/auth/index'
+      });
+    }
+    wx.request({
+      url: 'http://127.0.0.1:7001/api/user/auth/user',
+      method: 'GET',
+      header: {
+        Authorization: `Bearer ${token}`
+      },
+      success: (res) => {
+        let data = Object.assign({}, res.data);
+        data.second_subject = data.second_subject.split(',');
+        this.setData({
+          message: data
+        });
+      },
+      fail: () => {
+        $Message({
+          content: '信息获取失败',
+          type: 'error'
+        });
+      }
+    });
   },
 
   /**
@@ -161,7 +186,7 @@ Page({
     this.setData({
       message: {
         ...this.data.message,
-        isDorm: e.detail.value
+        is_dorm: e.detail.value
       }
     });
   },
