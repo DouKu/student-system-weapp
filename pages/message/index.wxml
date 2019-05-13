@@ -18,18 +18,18 @@
     </i-step>
   </i-steps>
   <view wx:if="{{step === 0}}">
-    <i-input title="姓名:" value="{{ value1 }}" autofocus placeholder="必填" />
+    <i-input title="姓名:" bind:change="handleNameChange" value="{{ message.name }}" placeholder="必填" />
     <i-panel title="性别:">
-      <i-radio-group bindchange="handleSexChange" current="{{sex}}">
+      <i-radio-group bindchange="handleSexChange" current="{{message.sex}}">
         <i-radio value="男"></i-radio>
         <i-radio value="女"></i-radio>
       </i-radio-group>
-      <i-input value="{{ value2 }}" type="number" title="电话号码:" placeholder="必填" />
-      <i-input value="{{ value3 }}" type="textarea" title="家庭住址:" placeholder="必填" maxlength="50" />
-      <i-input value="{{ value3 }}" type="textarea" title="户口所在地:" placeholder="必填" maxlength="50" />
+      <i-input value="{{ message.tel_num }}" bind:change="handleTemNumChange" type="number" title="电话号码:" placeholder="必填" />
+      <i-input value="{{ message.address }}" bind:change="handleAddressChange" type="textarea" title="家庭住址:" placeholder="必填" maxlength="50" />
+      <i-input value="{{ message.account_location }}" bind:change="handleAccountLoactionChange" type="textarea" title="户口所在地:" placeholder="必填" maxlength="50" />
     </i-panel>
     <i-panel title="是否内宿:">
-      <i-radio-group bindchange="handleIsDormChange" current="{{isDorm}}">
+      <i-radio-group bindchange="handleIsDormChange" current="{{message.is_dorm}}">
         <i-radio value="否"></i-radio>
         <i-radio value="是"></i-radio>
       </i-radio-group>
@@ -37,9 +37,9 @@
     <i-button type="primary" bind:click="toSecond" size="small">下一步</i-button>
   </view>
   <view wx:elif="{{step === 1}}">
-    <i-input title="监护人姓名:" value="{{ value1 }}" autofocus placeholder="必填" />
-    <i-input title="监护人电话号码:" value="{{ value1 }}" autofocus placeholder="必填" />
-    <i-input title="监护人身份证号:" value="{{ value1 }}" autofocus placeholder="必填" />
+    <i-input title="监护人姓名:" bindchange="handleGuardianNameChange" value="{{ message.guardian_name }}" placeholder="必填" />
+    <i-input title="监护人电话号码:" bindchange="handleGuardianTelNumChange" value="{{ message.guardian_tel_num }}" placeholder="必填" />
+    <i-input title="监护人身份证号:" bindchange="handleGuardianIdCardChange" value="{{ message.guardian_id_card }}" placeholder="必填" />
     <view class="step-button">
       <view class="button-wrap">
         <i-button type="default" bind:click="toFirst" size="small">上一步</i-button>
@@ -51,13 +51,13 @@
   </view>
   <view wx:else>
     <i-panel title="科目二选一:">
-      <i-radio-group bindchange="handleFirstSubjectChange" current="{{first_subject}}">
+      <i-radio-group bindchange="handleFirstSubjectChange" current="{{message.first_subject}}">
         <i-radio value="物理"></i-radio>
         <i-radio value="历史"></i-radio>
       </i-radio-group>
     </i-panel>
     <i-panel title="科目四选二:">
-      <i-checkbox-group bindchange="handleSecondSubjectChange" current="{{second_subject}}">
+      <i-checkbox-group bindchange="handleSecondSubjectChange" current="{{message.second_subject}}">
         <i-checkbox value="化学"></i-checkbox>
         <i-checkbox value="生物"></i-checkbox>
         <i-checkbox value="地理"></i-checkbox>
@@ -69,8 +69,9 @@
         <i-button type="default" bind:click="toSecond" size="small">上一步</i-button>
       </view>
       <view class="button-wrap">
-        <i-button type="primary" size="small">提交</i-button>
+        <i-button type="primary" bind:click="handleSubmit" size="small">提交</i-button>
       </view>
     </view>
   </view>
+  <i-message id="message" />
 </view>

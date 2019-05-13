@@ -8,6 +8,7 @@
     "i-radio-group": "../../components/radio-group/index",
     "i-radio": "../../components/radio/index",
     "i-checkbox-group": "../../components/checkbox-group/index",
-    "i-checkbox": "../../components/checkbox/index"
+    "i-checkbox": "../../components/checkbox/index",
+    "i-message": "../../components/message/index"
   }
 }
