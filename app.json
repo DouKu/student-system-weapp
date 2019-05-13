@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/home/index",
+    "pages/message/index",
     "pages/auth/index",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/message/index"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

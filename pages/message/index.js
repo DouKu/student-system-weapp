@@ -241,6 +241,11 @@ Page({
           content: '信息修改成功',
           type: 'success'
         })
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '/pages/home/index'
+          })
+        }, 1000);
       },
       fail: () => {
         $Message({

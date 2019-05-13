@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-panel": "../../components/panel/index",
+    "i-input": "../../components/input/index",
+    "i-button": "../../components/button/index"
+  }
+}

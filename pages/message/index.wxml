@@ -18,13 +18,13 @@
     </i-step>
   </i-steps>
   <view wx:if="{{step === 0}}">
-    <i-input title="姓名:" bind:change="handleNameChange" value="{{ message.name }}" placeholder="必填" />
+    <i-input title="姓名:" bind:change="handleNameChange" value="{{ message.name }}" placeholder="必填" disabled />
     <i-panel title="性别:">
       <i-radio-group bindchange="handleSexChange" current="{{message.sex}}">
         <i-radio value="男"></i-radio>
         <i-radio value="女"></i-radio>
       </i-radio-group>
-      <i-input value="{{ message.tel_num }}" bind:change="handleTemNumChange" type="number" title="电话号码:" placeholder="必填" />
+      <i-input value="{{ message.tel_num }}" bind:change="handleTemNumChange" title="电话号码:" placeholder="必填" />
       <i-input value="{{ message.address }}" bind:change="handleAddressChange" type="textarea" title="家庭住址:" placeholder="必填" maxlength="50" />
       <i-input value="{{ message.account_location }}" bind:change="handleAccountLoactionChange" type="textarea" title="户口所在地:" placeholder="必填" maxlength="50" />
     </i-panel>

@@ -17,7 +17,7 @@ Page({
     const token = wx.getStorageSync('token');
     if (token) {
       wx.redirectTo({
-        url: '/pages/message/index'
+        url: '/pages/home/index'
       });
     }
   },
@@ -101,7 +101,7 @@ Page({
     });
     setTimeout(() => {
       wx.navigateTo({
-        url: '/pages/message/index'
+        url: '/pages/home/index'
       })
     }, 1000);
   },
