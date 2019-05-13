@@ -15,17 +15,17 @@ Page({
       name: '女'
     }],
     message: {
-      name: '林光裕',
-      sex: '男',
-      tel_num: '15521132074',
-      address: 'test',
-      account_location: 'test',
-      is_dorm: '否',
-      guardian_name: 'test',
-      guardian_tel_num: 'test',
-      guardian_id_card: 'test',
-      first_subject: '物理',
-      second_subject: ['化学', '生物']
+      name: '',
+      sex: '',
+      tel_num: '',
+      address: '',
+      account_location: '',
+      is_dorm: '',
+      guardian_name: '',
+      guardian_tel_num: '',
+      guardian_id_card: '',
+      first_subject: '',
+      second_subject: []
     }
   },
 
