@@ -7,9 +7,13 @@
     <i-input type="textarea" value="{{ message.address }}" type="textarea" title="家庭住址:" disabled />
     <i-input value="{{ message.account_location }}" type="textarea" title="户口所在地:" disabled />
     <i-input value="{{ message.is_dorm }}" title="是否内宿:" disabled />
+  </i-panel>
+  <i-panel title="学生信息">
     <i-input value="{{ message.guardian_name }}" title="监护人姓名:" disabled />
     <i-input value="{{ message.guardian_tel_num }}" title="监护人电话号码:" disabled />
     <i-input value="{{ message.guardian_id_card }}" title="监护人身份证号:" disabled />
+  </i-panel>
+  <i-panel title="科目信息">
     <i-input value="{{ message.first_subject }}" title="科目二选一:" disabled />
     <i-input value="{{ message.second_subject }}" title="科目四选二:" disabled />
     <i-button type="primary" bind:click="toEdit" size="small">修改信息</i-button>
