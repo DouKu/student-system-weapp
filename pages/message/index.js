@@ -1,5 +1,7 @@
 // pages/message/index.js
 const { $Message } = require('../../components/base/index');
+const { logout } = require('../../utils/util');
+
 Page({
 
   /**
@@ -46,6 +48,10 @@ Page({
         Authorization: `Bearer ${token}`
       },
       success: (res) => {
+        const { statusCode } = res;
+        if (statusCode === 401) {
+          return logout();
+        } 
         let data = Object.assign({}, res.data);
         data.second_subject = data.second_subject.split(',');
         this.setData({
@@ -237,6 +243,10 @@ Page({
       },
       data: this.data.message,
       success: (res) => {
+        const { statusCode } = res;
+        if (statusCode === 401) {
+          return logout();
+        }
         $Message({
           content: '信息修改成功',
           type: 'success'

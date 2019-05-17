@@ -1,5 +1,7 @@
 // pages/auth/index.js
 const { $Message } = require('../../components/base/index');
+const { logout } = require('../../utils/util');
+
 Page({
 
   /**
@@ -78,6 +80,9 @@ Page({
       data: this.data,
       success: (res) => {
         const { statusCode, data } = res;
+        if (statusCode === 401) {
+          return logout();
+        }
         if (statusCode === 200) {
           this.authSuccess(data);
         } else {

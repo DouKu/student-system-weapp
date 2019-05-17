@@ -1,6 +1,9 @@
 <!--pages/auth/index.wxml-->
-<view>
-  <i-panel title="学生登录">
+<view class="auth-page">
+  <view class="auth-logo">
+    <image class="logo" src="/assets/images/logo.jpg" mode="aspectFill"></image>
+  </view>
+  <i-panel>
     <i-input 
       title="账号" 
       value="{{ account }}"

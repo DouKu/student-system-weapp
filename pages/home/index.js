@@ -1,4 +1,6 @@
 // pages/home/index.js
+const { logout } = require('../../utils/util');
+
 Page({
 
   /**
@@ -37,6 +39,10 @@ Page({
         Authorization: `Bearer ${token}`
       },
       success: (res) => {
+        const { statusCode } = res;
+        if (statusCode === 401) {
+          return logout();
+        } 
         this.setData({
           message: res.data
         });
