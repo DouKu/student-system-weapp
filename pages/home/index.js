@@ -1,5 +1,6 @@
 // pages/home/index.js
 const { logout } = require('../../utils/util');
+const { baseUrl } = require('../../config/index');
 
 Page({
 
@@ -33,7 +34,7 @@ Page({
       });
     }
     wx.request({
-      url: 'http://127.0.0.1:7001/api/user/auth/user',
+      url: `${baseUrl}/api/user/auth/user`,
       method: 'GET',
       header: {
         Authorization: `Bearer ${token}`

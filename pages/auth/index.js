@@ -1,6 +1,7 @@
 // pages/auth/index.js
 const { $Message } = require('../../components/base/index');
 const { logout } = require('../../utils/util');
+const { baseUrl } = require('../../config/index');
 
 Page({
 
@@ -75,7 +76,7 @@ Page({
 
   onLogin: function () {
     wx.request({
-      url: 'http://127.0.0.1:7001/api/user/signin',
+      url: `${baseUrl}/api/user/signin`,
       method: 'POST',
       data: this.data,
       success: (res) => {
