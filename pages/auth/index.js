@@ -9,8 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    account: '20142100236',
-    password: '1234567'
+    account: '',
+    password: ''
   },
 
   /**

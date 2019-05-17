@@ -310,6 +310,14 @@ Page({
     this.setData({
       message: {
         ...this.data.message,
+        guardian_tel_num: e.detail.detail.value
+      }
+    })
+  },
+  handleGuardianIdCardChange: function (e) {
+    this.setData({
+      message: {
+        ...this.data.message,
         guardian_id_card: e.detail.detail.value
       }
     })

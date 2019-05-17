@@ -9,17 +9,17 @@ Page({
    */
   data: {
      message: {
-      name: '--',
-      sex: '--',
-      tel_num: '--',
-      address: '--',
-      account_location: '--',
-      is_dorm: '--',
-      guardian_name: '--',
-      guardian_tel_num: '--',
-      guardian_id_card: '--',
-      first_subject: '--',
-      second_subject: '--'
+      name: '',
+      sex: '',
+      tel_num: '',
+      address: '',
+      account_location: '',
+      is_dorm: '',
+      guardian_name: '',
+      guardian_tel_num: '',
+      guardian_id_card: '',
+      first_subject: '',
+      second_subject: ''
     }
   },
 
