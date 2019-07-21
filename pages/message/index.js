@@ -224,7 +224,7 @@ Page({
   },
   handleSubmit: function () {
     const message = this.data.message;
-    if (message.choose != 1) {
+    if (message.choose == 1) {
       if (!message.first_subject) {
         return $Message({
           content: '请进行科目二选一',
