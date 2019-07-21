@@ -11,7 +11,7 @@
         监护人信息
       </view>
     </i-step>
-    <i-step>
+    <i-step wx:if="{{message.choose == 1}}">
       <view slot="title">
         选择科目
       </view>
@@ -44,7 +44,10 @@
       <view class="button-wrap">
         <i-button type="default" bind:click="toFirst" size="small">上一步</i-button>
       </view>
-      <view class="button-wrap">
+      <view class="button-wrap" wx:if="{{message.choose == 0}}">
+        <i-button type="primary" bind:click="handleSubmit" size="small">提交</i-button>
+      </view>
+      <view wx:else class="button-wrap">
         <i-button type="primary" bind:click="toThird" size="small">下一步</i-button>
       </view>
     </view>

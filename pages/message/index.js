@@ -20,6 +20,7 @@ Page({
     message: {
       name: '',
       sex: '',
+      choose: 0,
       tel_num: '',
       address: '',
       account_location: '',
@@ -223,17 +224,19 @@ Page({
   },
   handleSubmit: function () {
     const message = this.data.message;
-    if (!message.first_subject) {
-      return $Message({
-        content: '请进行科目二选一',
-        type: 'error'
-      })
-    }
-    if (message.second_subject.length !== 2) {
-      return $Message({
-        content: '请进行科目四选二',
-        type: 'error'
-      })
+    if (message.choose != 1) {
+      if (!message.first_subject) {
+        return $Message({
+          content: '请进行科目二选一',
+          type: 'error'
+        })
+      }
+      if (message.second_subject.length !== 2) {
+        return $Message({
+          content: '请进行科目四选二',
+          type: 'error'
+        })
+      }
     }
     const token = wx.getStorageSync('token');
     wx.request({
