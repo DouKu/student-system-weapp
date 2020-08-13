@@ -14,7 +14,7 @@
       title="密码" 
       type="password"
       value="{{ password }}" 
-      placeholder="请输入密码, 初始密码为身份证后6位"
+      placeholder="请输入8位出生年月日"
       bind:change="onPasswordChange" />
     <i-button type="primary" bind:click="onLogin" size="small">登录</i-button>
   </i-panel>
