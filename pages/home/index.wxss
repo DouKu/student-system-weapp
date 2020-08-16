@@ -1,1 +1,10 @@
 /* pages/home/index.wxss */
+.home-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.home-button .button-wrap {
+  width: 50%;
+}

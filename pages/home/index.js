@@ -109,5 +109,8 @@ Page({
     wx.navigateTo({
       url: '/pages/message/index'
     });
+  },
+  signout: function () {
+    logout();
   }
 })
