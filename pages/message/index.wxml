@@ -34,6 +34,24 @@
         <i-radio value="是"></i-radio>
       </i-radio-group>
     </i-panel>
+    <i-panel title="是否建档立卡贫困户:">
+      <i-radio-group bindchange="handleIsCreateFile" current="{{message.is_create_file}}">
+        <i-radio value="否"></i-radio>
+        <i-radio value="是"></i-radio>
+      </i-radio-group>
+    </i-panel>
+    <i-panel title="是否低保户:">
+      <i-radio-group bindchange="handleIsSubsistence" current="{{message.is_subsistence}}">
+        <i-radio value="否"></i-radio>
+        <i-radio value="是"></i-radio>
+      </i-radio-group>
+    </i-panel>
+    <i-panel title="是否残疾生:">
+      <i-radio-group bindchange="handleIsDisability" current="{{message.is_disability}}">
+        <i-radio value="否"></i-radio>
+        <i-radio value="是"></i-radio>
+      </i-radio-group>
+    </i-panel>
     <i-button type="primary" bind:click="toSecond" size="small">下一步</i-button>
   </view>
   <view wx:elif="{{step === 1}}">

@@ -7,6 +7,9 @@
     <i-input type="textarea" value="{{ message.address || '--' }}" type="textarea" title="家庭住址:" disabled />
     <i-input value="{{ message.account_location || '--' }}" type="textarea" title="户口所在地:" disabled />
     <i-input value="{{ message.is_dorm || '--' }}" title="是否内宿:" disabled />
+    <i-input value="{{ message.is_create_file || '--' }}" title="是否建档立卡贫困户:" disabled />
+    <i-input value="{{ message.is_subsistence || '--' }}" title="是否低保户:" disabled />
+    <i-input value="{{ message.is_disability || '--' }}" title="是否残疾生:" disabled />
   </i-panel>
   <i-panel title="监护人信息">
     <i-input value="{{ message.guardian_name || '--' }}" title="监护人姓名:" disabled />

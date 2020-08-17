@@ -25,6 +25,9 @@ Page({
       address: '',
       account_location: '',
       is_dorm: '',
+      is_create_file: '否',
+      is_subsistence: '否',
+      is_disability: '否',
       guardian_name: '',
       guardian_tel_num: '',
       guardian_id_card: '',
@@ -57,7 +60,10 @@ Page({
         let data = Object.assign({}, res.data);
         data.second_subject = data.second_subject.split(',');
         this.setData({
-          message: data
+          message: {
+            ...this.data.message,
+            ...data
+          }
         });
       },
       fail: () => {
@@ -195,6 +201,30 @@ Page({
       message: {
         ...this.data.message,
         is_dorm: e.detail.value
+      }
+    });
+  },
+  handleIsCreateFile: function (e) {
+    this.setData({
+      message: {
+        ...this.data.message,
+        is_create_file: e.detail.value
+      }
+    });
+  },
+  handleIsSubsistence: function (e) {
+    this.setData({
+      message: {
+        ...this.data.message,
+        is_subsistence: e.detail.value
+      }
+    });
+  },
+  handleIsDisability: function (e) {
+    this.setData({
+      message: {
+        ...this.data.message,
+        is_disability: e.detail.value
       }
     });
   },
